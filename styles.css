@@ -1,0 +1,137 @@
+/* -------------------- IMPORTED FONTS -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* -------------------- CSS RESET --------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------- ROOT VARIABLES --------------------------------------- */
+:root {
+    --primary-color: #1E88E5;
+    --secondary-color: #444444;
+    --text-color: #212121;
+    --background-color: #F7F0E6;
+    --image-size: 150px;
+    --section-padding: 40px;
+    --section-margin: 20px;
+    --line-height: 1.8;
+    --paragraph-spacing: 20px;
+}
+
+/* -------------------- GLOBAL STYLES (mobile first/small) -------------------- */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-width: 320px;
+    line-height: var(--line-height);
+}
+
+header,
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Section Spacing */
+section {
+    padding: var(--section-padding);
+    margin-bottom: var(--section-margin);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-bottom: var(--paragraph-spacing);
+}
+
+.fruit-list,
+.vegetable-list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+.fruit-list figure,
+.vegetable-list figure {
+    text-align: center;
+    margin: 0;
+}
+
+.fruit-list img,
+.vegetable-list img {
+    width: var(--image-size);
+    height: var(--image-size);
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.fruit-list figcaption,
+.vegetable-list figcaption {
+    font-size: 1em;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* -------------------- MEDIA QUERY (medium) -------------------------------- */
+@media screen and (min-width: 834px) {
+
+    .fruit-list,
+    .vegetable-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* -------------------- MEDIA QUERY (large) ------------------------------------ */
+@media screen and (min-width: 1280px) {
+    nav ul {
+        justify-content: start;
+    }
+
+    .fruit-list,
+    .vegetable-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* -------------------- MEDIA QUERY (xl) --------------------------------------- */
+@media screen and (min-width: 1440px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .fruit-list,
+    .vegetable-list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
